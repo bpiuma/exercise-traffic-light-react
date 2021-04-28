@@ -2,63 +2,54 @@ import React, { useState } from "react";
 
 //create your first component
 export function Home() {
-	let rojoOff = "#CB4444";
+	let rojoOff = "#F08080";
+	let rojoOn = "red";
 	let amarilloOff = "#D5DF37";
-	let verdeOff = "#37DF3C";
+	let amarilloOn = "yellow";
+	let verdeOff = "#3CB371";
+	let verdeOn = "#7FFF00";
 
 	const [rojo, SetRojo] = useState(rojoOff);
 	const [amarillo, SetAmarillo] = useState(amarilloOff);
 	const [verde, SetVerde] = useState(verdeOff);
 
-	const botonRojo = {
-		width: "50px",
-		height: "50px",
-		backgroundColor: rojo,
-		borderRadius: "100%",
-		marginTop: "10px",
-		marginBottom: "10px"
+	const boton = color => {
+		return {
+			width: "50px",
+			height: "50px",
+			backgroundColor: color,
+			borderRadius: "100%",
+			marginTop: "10px",
+			marginBottom: "10px"
+		};
 	};
 
-	const botonAmarillo = {
-		width: "50px",
-		height: "50px",
-		backgroundColor: amarillo,
-		borderRadius: "100%",
-		marginTop: "10px",
-		marginBottom: "10px"
-	};
-
-	const botonVerde = {
-		width: "50px",
-		height: "50px",
-		backgroundColor: verde,
-		borderRadius: "100%",
-		marginTop: "10px",
-		marginBottom: "10px"
-	};
-
-	const prender_rojo = () => {
-		SetRojo("red");
+	const cambiar = color => {
+		SetRojo(rojoOff);
 		SetAmarillo(amarilloOff);
 		SetVerde(verdeOff);
-	};
-	const prender_amarillo = () => {
-		SetAmarillo("yellow");
-		SetRojo(rojoOff);
-		SetVerde(verdeOff);
-	};
-	const prender_verde = () => {
-		SetVerde("green");
-		SetAmarillo(amarilloOff);
-		SetRojo(rojoOff);
+		switch (color) {
+			case "rojo":
+				SetRojo(rojoOn);
+				break;
+			case "amarillo":
+				SetAmarillo(amarilloOn);
+				break;
+			case "verde":
+				SetVerde(verdeOn);
+				break;
+		}
 	};
 
 	return (
 		<div className="d-flex justify-content-center">
-			<div className="bg-dark col-1 mt-5 rounded d-flex flex-column align-items-center justify-content-center">
-				<button style={botonRojo} onClick={prender_rojo} />
-				<button style={botonAmarillo} onClick={prender_amarillo} />
-				<button style={botonVerde} onClick={prender_verde} />
+			<div className="bg-dark col-1 mt-5 p-2 rounded d-flex flex-column align-items-center">
+				<button style={boton(rojo)} onClick={() => cambiar("rojo")} />
+				<button
+					style={boton(amarillo)}
+					onClick={() => cambiar("amarillo")}
+				/>
+				<button style={boton(verde)} onClick={() => cambiar("verde")} />
 			</div>
 		</div>
 	);
