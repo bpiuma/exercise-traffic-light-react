@@ -12,19 +12,21 @@ export function Home() {
 		<div className="d-flex justify-content-center">
 			<div className="bg-dark col-1 mt-5 p-2 rounded d-flex flex-column align-items-center">
 				<button
-					className={"btn " + (color == rojo ? "rojoOn" : "rojoOff")}
+					className={
+						"boton " + (color == rojo ? "rojoOn" : "rojoOff")
+					}
 					onClick={() => SetColor(rojo)}
 				/>
 				<button
 					className={
-						"btn " +
+						"boton " +
 						(color == amarillo ? "amarilloOn" : "amarilloOff")
 					}
 					onClick={() => SetColor(amarillo)}
 				/>
 				<button
 					className={
-						"btn " + (color == verde ? "verdeOn" : "verdeOff")
+						"boton " + (color == verde ? "verdeOn" : "verdeOff")
 					}
 					onClick={() => SetColor(verde)}
 				/>
