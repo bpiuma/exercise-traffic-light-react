@@ -1,13 +1,33 @@
 @import "~bootstrap/scss/bootstrap.scss";
 
-/* 
+    .btn {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+    .rojoOff {
+        background-color: #F08080;
+    }
 
-*/
+    .rojoOn {
+        background: red;
+    } 
+
+    .amarilloOff {
+        background-color: #D5DF37;
+    } 
+
+    .amarilloOn {
+        background-color: yellow;
+    } 
+
+    .verdeOff {
+        background-color: #3CB371;
+    } 
+
+    .verdeOn {
+        background-color: #7FFF00;
+    } 
